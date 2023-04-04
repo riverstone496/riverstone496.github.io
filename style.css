@@ -1,134 +1,166 @@
 @charset "utf-8";
 
+/* General */
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  background-color: #f7f7f7;
+}
+
 /* Header */
 header {
-background-color: #333;
-color: #fff;
-text-align: center;
-padding: 2rem;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
 }
 
 header h1 {
-font-size: clamp(2.5rem, 5vw, 4rem);
-margin: 0;
-font-family: "Montserrat", sans-serif;
-text-transform: uppercase; /* Uppercase text */
-letter-spacing: 0.2rem; /* Add letter spacing */
-position: relative; /* Create a stacking context */
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 0.2rem; /* Add letter spacing */
+  position: relative; /* Create a stacking context */
 }
 
 header h1::before {
-content: ''; /* Add an empty content before the text */
-position: absolute; /* Absolute position */
-bottom: 0; /* At the bottom of the text */
-left: 0; /* At the left of the text */
-width: 100%; /* Full width */
-height: 0.15rem; /* Set the height */
-background-color: #fff; /* White color */
-transform: scaleX(0); /* Set the initial scale */
-transform-origin: left; /* Set the transform origin */
-transition: transform 0.3s ease-in-out; /* Add a transition effect */
-}
-
-header h1:hover::before {
-transform: scaleX(1); /* Scale the element to full width on hover */
+  content: ''; /* Add an empty content before the text */
+  position: absolute; /* Absolute position */
+  bottom: -1.5rem; /* Position it below the text */
+  left: 50%; /* Position it in the middle */
+  transform: translateX(-50%); /* Center it horizontally */
+  width: 10rem; /* Set the width */
+  height: 0.3rem; /* Set the height */
+  background-color: #fff; /* Set the background color */
 }
 
 /* Navigation */
 nav {
-background-color: #3D4C63;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 2rem;
-padding: 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: #eee;
+  padding: 1rem;
 }
 
 nav a {
-color: #fff;
-text-decoration: none;
-font-size: clamp(1.2rem, 2vw, 1.5rem);
-transition: all 0.2s ease-in-out;
-font-family: "Montserrat", sans-serif;
-text-transform: uppercase; /* Uppercase text */
-letter-spacing: 0.2rem; /* Add letter spacing */
-position: relative; /* Create a stacking context */
+  color: #333;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
 }
 
-nav a::before {
-content: ''; /* Add an empty content before the text */
-position: absolute; /* Absolute position */
-bottom: 0; /* At the bottom of the text */
-left: 0; /* At the left of the text */
-width: 100%; /* Full width */
-height: 0.15rem; /* Set the height */
-background-color: #fff; /* White color */
-transform: scaleX(0); /* Set the initial scale */
-transform-origin: left; /* Set the transform origin */
-transition: transform 0.3s ease-in-out; /* Add a transition effect */
-}
-
-nav a:hover::before {
-transform: scaleX(1); /* Scale the element to full width on hover */
-}
-
+nav a:hover,
 nav a.active {
-font-weight: bold; /* Add bold weight to active link */
+  color: #333;
 }
 
-/* Sections */
-section {
-margin: 3rem 0;
+/* Main */
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
 }
 
-section h2 {
-font-size: clamp(2rem, 5vw, 3rem);
-margin: 0;
-font-family: "Montserrat", sans-serif;
-text-transform: uppercase; /* Uppercase text */
-letter-spacing: 0.2rem; /* Add letter spacing */
+main h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-section li {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    /* margin-bottom: 10px; */
+main ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main li {
+  margin-bottom: 0.5rem;
+}
+
+main a {
+  color: #333;
+  text-decoration: none;
+}
+
+main a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  /* Reduce the font size of the header */
+  header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  /* Stack the navigation links vertically */
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  /* Hide the header background image */
+header {
+    background-image: none;
     }
-
-section a {
-    text-decoration: none;
-    color: #000;
     }
-        
-section a:hover {
-text-decoration: underline;
-}
-
-a {
-    text-decoration: none; /* Remove the default underline */
-    color: #333; /* Set the font color to a dark grey */
-    font-weight: bold; /* Set the font weight to bold */
-    border-bottom: 2px solid #333; /* Add a 2px solid border at the bottom */
-    padding-bottom: 2px; /* Add some padding at the bottom */
-}
-
-a:hover {
-    border-bottom: 2px solid #666; /* Change the border color on hover */
-}
-
-/* Responsive Design */
-@media only screen and (max-width: 768px) {
+    
+    @media screen and (max-width: 600px) {
+    /* Reduce the font size of the header */
+    header h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    
+    /* Stack the navigation links vertically */
     nav {
-        flex-direction: column;
+    flex-direction: column;
+    align-items: center;
     }
-}
-
-@keyframes pulse {
-    from {
-        transform: scale(1);
+    
+    nav a {
+    margin: 0.5rem 0;
     }
-    to {
-        transform: scale(1.05);
+    
+    /* Hide the header background image */
+    header {
+    background-image: none;
     }
-}
+    
+    /* Hide the hero section background image */
+    #hero {
+    background-image: none;
+    }
+    }
+    
+    /* Style the hero section */
+    #hero {
+    background-image: url("hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    #hero h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    }
+    
+    #hero p {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    margin-top: 1rem;
+    }    
