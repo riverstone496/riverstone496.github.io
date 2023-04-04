@@ -105,18 +105,30 @@ section a:hover {
 text-decoration: underline;
 }
 
+a {
+    text-decoration: none; /* Remove the default underline */
+    color: #333; /* Set the font color to a dark grey */
+    font-weight: bold; /* Set the font weight to bold */
+    border-bottom: 2px solid #333; /* Add a 2px solid border at the bottom */
+    padding-bottom: 2px; /* Add some padding at the bottom */
+}
+
+a:hover {
+    border-bottom: 2px solid #666; /* Change the border color on hover */
+}
+
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
-nav {
-flex-direction: column;
-}
+    nav {
+        flex-direction: column;
+    }
 }
 
 @keyframes pulse {
-from {
-transform: scale(1);
-}
-to {
-transform: scale(1.05);
-}
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
 }
