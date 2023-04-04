@@ -2,7 +2,7 @@
 
 /* General */
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #333;
     background-color: #f7f7f7;
 }
@@ -18,145 +18,92 @@ header {
 header h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin: 0;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 0.2rem; /* Add letter spacing */
-    position: relative; /* Create a stacking context */
-}
-
-header h1::before {
-    content: ''; /* Add an empty content before the text */
-    position: absolute; /* Absolute position */
-    bottom: -1.5rem; /* Position it below the text */
-    left: 50%; /* Position it in the middle */
-    transform: translateX(-50%); /* Center it horizontally */
-    width: 10rem; /* Set the width */
-    height: 0.3rem; /* Set the height */
-    background-color: #fff; /* Set the background color */
 }
 
 /* Navigation */
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     background-color: #eee;
+    font-weight: bold;
     padding: 1rem;
 }
 
 nav a {
-    color: #333;
     text-decoration: none;
-    margin: 0 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: color 0.3s ease-in-out;
-}
-
-nav a:hover,
-nav a.active {
     color: #333;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease;
 }
 
-/* Main */
-main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+nav a.active {
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Sections */
+section {
+    margin: 3rem 0;
+    padding: 1rem;
     background-color: #fff;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 1px #ddd;
 }
 
-main h2 {
+section h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
 }
 
-main li {
-    margin-bottom: 0.5rem;
+section ul {
+    padding: 1;
+    margin: 0.5rem 0;
 }
 
+section ul li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+section ul li a {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+section ul li a:hover {
+    color: #aaa;
+}
+
+/* Links */
 a {
     text-decoration: none;
     color: #333;
-    border-bottom: 2px solid #333;
-    transition: all 0.3s ease;
-  }
-  
-  a:hover {
-    color: #666;
-    border-bottom-color: #666;
-  }
+    transition: color 0.3s ease;
+}
 
-@media screen and (max-width: 768px) {
-    /* Reduce the font size of the header */
-    header h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
-    }
+a:hover {
+    color: #aaa;
+}
 
-    /* Stack the navigation links vertically */
+/* Responsive */
+@media only screen and (max-width: 600px) {
     nav {
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     nav a {
-        margin: 0.5rem 0;
+        display: block;
+        padding: 0.5rem 0;
     }
-
-    /* Hide the header background image */
-    header {
-        background-image: none;
-        }
 }
-        
-@media screen and (max-width: 600px) {
-/* Reduce the font size of the header */
-header h1 {
-font-size: clamp(1.5rem, 4vw, 2rem);
-}
-
-/* Stack the navigation links vertically */
-nav {
-flex-direction: column;
-align-items: center;
-}
-
-nav a {
-margin: 0.5rem 0;
-}
-
-/* Hide the header background image */
-header {
-background-image: none;
-}
-
-/* Hide the hero section background image */
-#hero {
-background-image: none;
-}
-}
-
-/* Style the hero section */
-#hero {
-background-image: url("hero-bg.jpg");
-background-size: cover;
-background-position: center;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-#hero h2 {
-font-size: clamp(2rem, 4vw, 3rem);
-color: white;
-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-}
-
-#hero p {
-font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-color: white;
-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-margin-top: 1rem;
-}        
