@@ -122,3 +122,21 @@ a:hover {
         border-radius: 5px;
     }
 }
+
+/* Special styling for the Japanese language switch button */
+nav a.language-switch {
+    color: #fff;
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the language switch button */
+nav a.language-switch:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #fff;
+    transform: scale(1.1);
+}
