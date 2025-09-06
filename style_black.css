@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/* --- Variables for Terminal Theme --- */
+:root {
+    --bg-dark: #111213;      /* Dark background color */
+    --fg-light: #d6d6d6;     /* Light foreground (text) color */
+    --matrix-green: #39FF14; /* Accent color for links */
+}
+
+/* --- General Body Styling --- */
+body {
+    background-color: var(--bg-dark);
+    color: var(--fg-light);
+    font-family: "SF Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 650px; /* Limits the width for better readability */
+    margin: 50px auto; /* Centers the content */
+    padding: 0 15px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Header Styling --- */
+header {
+    /* Resetting header styles to blend with the body */
+    background-color: transparent;
+    color: inherit;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 1.5rem; /* A more subtle size for the terminal look */
+    margin: 0;
+}
+
+/* --- Navigation --- */
+nav {
+    /* Resetting nav styles */
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+nav a {
+    color: var(--matrix-green);
+    text-decoration: none;
+    margin-right: 1rem; /* Space out the links */
+}
+
+nav a:hover,
+nav a:focus {
+    text-decoration: underline;
+}
+
+/* --- Sections --- */
+section {
+    /* Removing boxy styles like background, shadow, and border-radius */
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+section h2 {
+    font-size: 1.2rem;
+    color: var(--matrix-green); /* Use accent color for headings */
+    margin: 0 0 1rem;
+}
+
+section ul {
+    padding: 0;
+    list-style-type: none; /* Remove bullet points */
+    margin-left: 1.5rem; /* Indent the entire list to make it stand out */
+}
+
+section ul li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+/* Add a terminal-style prompt symbol before each list item */
+section ul li::before {
+    content: "> ";
+    color: var(--matrix-green);
+}
+
+/* --- General Link Styling --- */
+a {
+    color: var(--matrix-green);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/* --- Special Styling for Language Switch --- */
+/* Making the button look like a command-line option */
+nav a.language-switch {
+    color: var(--matrix-green);
+    background-color: transparent;
+    border: 1px solid var(--matrix-green);
+    border-radius: 3px;
+    padding: 0.3rem 0.6rem;
+}
+
+nav a.language-switch:hover {
+    background-color: var(--matrix-green);
+    color: var(--bg-dark);
+    text-decoration: none;
+}
+
+/* --- Responsive Styling --- */
+/* The simple layout is naturally responsive, so complex rules are not needed. */
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 20px auto;
+        font-size: 0.85rem;
+    }
+
+    nav {
+        /* You might want links to stack on small screens */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin-bottom: 0.5rem;
+    }
+}
