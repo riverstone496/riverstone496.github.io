@@ -1,6 +1,8 @@
 @charset "utf-8";
 
 :root {
+    --font-body: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    --font-display: "Cormorant Garamond", "Noto Serif JP", serif;
     --bg: #0b0b0b;
     --surface: #141414;
     --surface-2: #1a1a1a;
@@ -22,7 +24,7 @@
 
 /* General */
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-body);
     color: var(--text-gold);
     background-color: var(--bg);
     background-image:
@@ -50,6 +52,8 @@ header {
 }
 
 header h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin: 0;
     letter-spacing: 0.03em;
@@ -70,10 +74,14 @@ nav {
 }
 
 nav a {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
     text-decoration: none;
     color: var(--text-gold);
     padding: 0.5rem 0.7rem;
     border-radius: 6px;
+    letter-spacing: 0.02em;
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -105,6 +113,8 @@ section {
 }
 
 section h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: 2rem;
     margin: 0 0 1rem;
     color: var(--heading-main);
@@ -116,6 +126,8 @@ section h2 {
 }
 
 section h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
     color: var(--heading-sub);
     margin: 1.4rem 0 0.6rem;
 }
