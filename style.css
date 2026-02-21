@@ -6,12 +6,12 @@
     --surface-2: #1a1a1a;
     --header-start: #1c2433;
     --header-end: #101317;
-    --text-gold: #e4c978;
-    --text-gold-soft: #d5b764;
-    --text-muted: #b39a59;
+    --text-gold: #ccb36f;
+    --text-gold-soft: #b99f63;
+    --text-muted: #9b8653;
     --heading-main: #ece7da;
     --heading-sub: #cfc7b3;
-    --line: #3a2f16;
+    --line: #372e1b;
     --link: #7fc9ff;
     --link-hover: #b8e1ff;
     --link-visited: #a9b7ff;
@@ -110,6 +110,10 @@ section ul {
 section ul li {
     margin: 0.5rem 0;
     font-size: 1.1rem;
+}
+
+section ul li::marker {
+    color: var(--heading-main);
 }
 
 section ul li a {
