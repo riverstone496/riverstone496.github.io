@@ -1,23 +1,47 @@
 @charset "utf-8";
 
+:root {
+    --bg: #0b0b0b;
+    --surface: #141414;
+    --surface-2: #1a1a1a;
+    --header-start: #1c2433;
+    --header-end: #101317;
+    --text-gold: #e4c978;
+    --text-gold-soft: #d5b764;
+    --text-muted: #b39a59;
+    --heading-main: #ece7da;
+    --heading-sub: #cfc7b3;
+    --line: #3a2f16;
+    --link: #7fc9ff;
+    --link-hover: #b8e1ff;
+    --link-visited: #a9b7ff;
+    --button: #24453a;
+    --button-hover: #2f5d4d;
+}
+
 /* General */
 body {
     font-family: "Montserrat", sans-serif;
-    color: #333;
-    background-color: #f7f7f7;
+    color: var(--text-gold);
+    background-color: var(--bg);
+    line-height: 1.7;
+    margin: 0;
 }
 
 /* Header */
 header {
-    background-color: #333;
-    color: #fff;
+    background: linear-gradient(135deg, var(--header-start), var(--header-end));
+    color: var(--text-gold);
     text-align: center;
-    padding: 2rem;
+    padding: 2.2rem 1rem;
+    border-bottom: 1px solid var(--line);
 }
 
 header h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin: 0;
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
 }
 
 /* Navigation */
@@ -26,46 +50,60 @@ nav {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #eee;
+    background-color: var(--surface);
     font-weight: bold;
     padding: 1rem;
+    border-bottom: 1px solid var(--line);
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
-    padding: 0.5rem;
-    transition: background-color 0.3s ease;
+    color: var(--text-gold);
+    padding: 0.5rem 0.7rem;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+nav a:visited {
+    color: var(--text-gold);
 }
 
 nav a:hover {
-    background-color: #333;
-    color: #fff;
-    border-radius: 5px;
+    background-color: var(--surface-2);
+    color: var(--link-hover);
 }
 
 nav a.active {
-    color: #fff;
-    background-color: #333;
-    border-radius: 5px;
+    color: var(--link-hover);
+    background-color: #232323;
 }
 
 /* Sections */
 section {
     margin: 3rem 0;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 1px #ddd;
+    padding: 1.15rem;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 section h2 {
     font-size: 2rem;
     margin: 0 0 1rem;
+    color: var(--heading-main);
+    border-bottom: 1px solid #505968;
+    padding-bottom: 0.25rem;
+    letter-spacing: 0.02em;
+}
+
+section h3 {
+    color: var(--heading-sub);
+    margin: 1.4rem 0 0.6rem;
 }
 
 section ul {
-    padding: 1;
+    padding: 0 0 0 1rem;
     margin: 0.5rem 0;
 }
 
@@ -75,59 +113,67 @@ section ul li {
 }
 
 section ul li a {
-    color: #003399;
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.18em;
     transition: color 0.3s ease;
 }
 
 section ul li a:hover {
-    color: #aaa;
+    color: var(--link-hover);
 }
 
 /* Links */
 a {
     text-decoration: none;
-    color: #333;
+    color: var(--link);
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #aaa;
+    color: var(--link-hover);
+}
+
+a:visited {
+    color: var(--link-visited);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--link-hover);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* Responsive */
 @media only screen and (max-width: 600px) {
     nav {
-        display: none;
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        gap: 0.25rem;
     }
 
     nav a {
-        display: none;
-        padding: 0.5rem 0;
+        padding: 0.45rem 0.65rem;
     }
 
     nav a:hover {
-        display: none;
-        background-color: #333;
-        color: #fff;
-        border-radius: 5px;
+        background-color: var(--surface-2);
+        color: var(--link-hover);
     }
     
     nav a.active {
-        display: none;
-        color: #fff;
-        background-color: #333;
-        border-radius: 5px;
+        color: var(--link-hover);
+        background-color: #232323;
     }
 }
 
 /* Special styling for the Japanese language switch button */
 nav a.language-switch {
-    color: #fff;
-    background-color: #007bff;
-    border: 2px solid #007bff;
+    color: #f8f4e8;
+    background-color: var(--button);
+    border: 1px solid #3f7a66;
     border-radius: 5px;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
@@ -135,8 +181,8 @@ nav a.language-switch {
 
 /* Hover effect for the language switch button */
 nav a.language-switch:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    color: #fff;
-    transform: scale(1.1);
+    background-color: var(--button-hover);
+    border-color: #4e9a80;
+    color: #fff7dc;
+    transform: translateY(-1px);
 }
