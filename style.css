@@ -4,6 +4,7 @@
     --bg: #0b0b0b;
     --surface: #141414;
     --surface-2: #1a1a1a;
+    --surface-3: #1f1f1f;
     --header-start: #1c2433;
     --header-end: #101317;
     --text-gold: #c5ad6b;
@@ -24,8 +25,18 @@ body {
     font-family: "Montserrat", sans-serif;
     color: var(--text-gold);
     background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 12% 8%, rgba(197, 173, 107, 0.08), transparent 26%),
+        radial-gradient(circle at 85% 24%, rgba(130, 148, 180, 0.08), transparent 30%),
+        linear-gradient(180deg, #0d0d0d 0%, #090909 100%);
     line-height: 1.7;
     margin: 0;
+}
+
+main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.2rem 1rem 2.4rem;
 }
 
 /* Header */
@@ -35,6 +46,7 @@ header {
     text-align: center;
     padding: 2.2rem 1rem;
     border-bottom: 1px solid var(--line);
+    box-shadow: inset 0 -20px 45px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
@@ -50,10 +62,11 @@ nav {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    background-color: var(--surface);
+    background: linear-gradient(180deg, #171717 0%, var(--surface) 100%);
     font-weight: bold;
     padding: 1rem;
     border-bottom: 1px solid var(--line);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
 }
 
 nav a {
@@ -82,10 +95,13 @@ nav a.active {
 section {
     margin: 3rem 0;
     padding: 1.15rem;
-    background-color: var(--surface);
+    background:
+        linear-gradient(160deg, rgba(31, 31, 31, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
     border: 1px solid var(--line);
     border-radius: 8px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 section h2 {
@@ -93,8 +109,10 @@ section h2 {
     margin: 0 0 1rem;
     color: var(--heading-main);
     border-bottom: 1px solid #505968;
-    padding-bottom: 0.25rem;
-    letter-spacing: 0.02em;
+    border-left: 3px solid rgba(197, 173, 107, 0.6);
+    padding: 0 0 0.25rem 0.6rem;
+    letter-spacing: 0.03em;
+    text-transform: none;
 }
 
 section h3 {
