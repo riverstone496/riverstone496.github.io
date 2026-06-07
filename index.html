@@ -4,10 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Satoki Ishikawa</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+@charset "utf-8";
+
+:root {
+    --font-body: "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+    --font-display: "Baskerville", "Times New Roman", "Hiragino Mincho ProN", serif;
+    --bg: #0b0b0b;
+    --surface: #141414;
+    --surface-2: #1a1a1a;
+    --surface-3: #1f1f1f;
+    --header-start: #1c2433;
+    --header-end: #101317;
+    --text-gold: #c5ad6b;
+    --text-gold-soft: #b39a60;
+    --text-muted: #97824f;
+    --heading-main: #ece7da;
+    --heading-sub: #cfc7b3;
+    --line: #372e1b;
+    --link: #7fc9ff;
+    --link-hover: #b8e1ff;
+    --link-visited: #a9b7ff;
+    --button: #24453a;
+    --button-hover: #2f5d4d;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-gold);
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 12% 8%, rgba(197, 173, 107, 0.08), transparent 26%),
+        radial-gradient(circle at 85% 24%, rgba(130, 148, 180, 0.08), transparent 30%),
+        linear-gradient(180deg, #0d0d0d 0%, #090909 100%);
+    line-height: 1.7;
+    margin: 0;
+}
+
+main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.2rem 1rem 2.4rem;
+}
+
+header {
+    background: linear-gradient(135deg, var(--header-start), var(--header-end));
+    color: var(--text-gold);
+    text-align: center;
+    padding: 2.2rem 1rem;
+    border-bottom: 1px solid var(--line);
+    box-shadow: inset 0 -20px 45px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 0;
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background: linear-gradient(180deg, #171717 0%, var(--surface) 100%);
+    font-weight: bold;
+    padding: 1rem;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+nav a {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--text-gold);
+    padding: 0.5rem 0.7rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+nav a:visited {
+    color: var(--text-gold);
+}
+
+nav a:hover {
+    background-color: var(--surface-2);
+    color: var(--link-hover);
+}
+
+nav a.active {
+    color: var(--link-hover);
+    background-color: #232323;
+}
+
+section {
+    margin: 3rem 0;
+    padding: 1.15rem;
+    background:
+        linear-gradient(160deg, rgba(31, 31, 31, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+section h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    color: var(--heading-main);
+    border-bottom: 1px solid #505968;
+    border-left: 3px solid rgba(197, 173, 107, 0.6);
+    padding: 0 0 0.25rem 0.6rem;
+    letter-spacing: 0.03em;
+    text-transform: none;
+}
+
+section h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--heading-sub);
+    margin: 1.4rem 0 0.6rem;
+}
+
+section ul {
+    padding: 0 0 0 1rem;
+    margin: 0.5rem 0;
+}
+
+section ul li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+section ul li::marker {
+    color: var(--heading-main);
+}
+
+section ul li a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.18em;
+    transition: color 0.3s ease;
+}
+
+section ul li a:hover {
+    color: var(--link-hover);
+}
+
+a {
+    text-decoration: none;
+    color: var(--link);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+a:visited {
+    color: var(--link-visited);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--link-hover);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.4rem 0.5rem;
+        padding: 0.75rem 0.65rem;
+    }
+
+    nav a {
+        flex: 0 1 auto;
+        font-size: 1rem;
+        padding: 0.4rem 0.68rem;
+    }
+
+    nav a:hover {
+        background-color: var(--surface-2);
+        color: var(--link-hover);
+    }
+
+    nav a.active {
+        color: var(--link-hover);
+        background-color: #232323;
+    }
+
+    nav a.language-switch {
+        margin-left: 0;
+    }
+}
+
+nav a.language-switch {
+    color: #f8f4e8;
+    background-color: var(--button);
+    border: 1px solid #3f7a66;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+nav a.language-switch:hover {
+    background-color: var(--button-hover);
+    border-color: #4e9a80;
+    color: #fff7dc;
+    transform: translateY(-1px);
+}
+    </style>
 </head>
 <body>
     <header>

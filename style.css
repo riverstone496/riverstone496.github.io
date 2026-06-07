@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 :root {
-    --font-body: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
-    --font-display: "Cormorant Garamond", "Noto Serif JP", serif;
+    --font-body: "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+    --font-display: "Baskerville", "Times New Roman", "Hiragino Mincho ProN", serif;
     --bg: #0b0b0b;
     --surface: #141414;
     --surface-2: #1a1a1a;
